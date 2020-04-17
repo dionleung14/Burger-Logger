@@ -1,25 +1,30 @@
 <h1>Eat-a-Burger!</h1>
 
-<h2>Burgers to be nommed</h2>
-
-<ul>
-  {{#each burgers}}
-    {{#unless devoured}}
+<main>
+  <section id="to-be-eaten">
+    <h2>Burgers to be nommed</h2>
+    <ul>
+      {{#each burgers}}
+      {{#unless devoured}}
       {{> burgers/burger-block devoured=false}}
-    {{/unless}}
-  {{/each}}
-</ul>
+      {{/unless}}
+      {{/each}}
+    </ul>
+  </section>
+  <section id="already-eaten">
+    <h2>Burgers already nommed</h2>
 
-<h2>Burgers already nommed</h2>
-
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
+    <ul>
+      {{#each burgers}}
+      {{#if devoured}}
       {{> burgers/burger-block devoured=true}}
-    {{/if}}
-  {{/each}}
-</ul>
+      {{/if}}
+      {{/each}}
+    </ul>
+  </section>
+</main>
 
+<div id="place-order">
 <h2>Order a Burger</h2>
 <form class="create-form">
 
@@ -30,3 +35,4 @@
 
   <button type="submit">Order up!</button>
 </form>
+</div>
