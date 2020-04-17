@@ -13,6 +13,11 @@ const burger = {
       cb(res);
     });
   },
+  update: function(objColVals, condition, cb) {
+    orm.update("burgers", objColVals, condition, function(res) {
+      cb(res);
+    });
+  },
   yeeted: function(burgerId, cb) {
     orm.yeeted("burgers", burgerId, function(res){
       cb(res);
